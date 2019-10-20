@@ -1,0 +1,13 @@
+
+<!-- Counter -->
+<div class="card-container">
+    <h2>Counter</h2>
+</div>
+<div class="card-container">
+    <p class="card">Contador Redux: {{ stateActual$ | async }}</p>
+</div>
+<div class="card-container">
+    <button (click)="addClick()">+</button>
+    <button (click)="subsClick()">-</button>
+    <app-reset></app-reset>
+</div>
