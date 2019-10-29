@@ -15,10 +15,14 @@ export interface State {
   counter: number;
 }
 
+// agrupamos todos los reducers de la aplicación en un objeto
+// aunque en este caso es solo 1
 export const reducers = {
   counter: counterReducer
 };
 
+// Mas adelante usaremos el metodo proporcionado por ngrx
+// para agrupar todos los reducers de la aplicación en un objeto
 /* export const reducers: ActionReducerMap<State> = {
 
 }; */
