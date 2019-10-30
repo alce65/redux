@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store} from '@ngrx/store';
-import { State } from 'src/app/reducers';
+import { AppState } from 'src/app/reducers';
 import { Action } from '@ngrx/store';
 import { INCREMENT, DECREMENT } from 'src/app/reducers/counter.actions';
 
@@ -12,7 +12,7 @@ import { INCREMENT, DECREMENT } from 'src/app/reducers/counter.actions';
 })
 export class CounterComponent implements OnInit {
   stateActual$: any;
-  constructor(private store: Store<State>) {
+  constructor(private store: Store<AppState>) {
     this.stateActual$ = this.store.select('counter');
   }
 

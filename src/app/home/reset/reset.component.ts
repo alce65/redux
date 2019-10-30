@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, Action } from '@ngrx/store';
-import { State } from 'src/app/reducers';
+import { AppState } from 'src/app/reducers';
 import { RESET } from 'src/app/reducers/counter.actions';
 
 @Component({
@@ -10,7 +10,7 @@ import { RESET } from 'src/app/reducers/counter.actions';
 })
 export class ResetComponent implements OnInit {
 
-  constructor(private store: Store<State>) { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
   }

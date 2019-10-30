@@ -1,9 +1,8 @@
-import {  } from '@ngrx/store';
+import { Action, createReducer, on } from '@ngrx/store';
 import { Tarea } from './tareas.model';
-import { ADDTAREA, AllActions } from './tareas.actions';
+import { AddTareaAcction } from './tareas.actions';
 
-
-export const tareasReducer =
+/* export const tareasReducer =
     (state: Array<Tarea> = [], action: AllActions) => {
         switch (action.type) {
             case ADDTAREA:
@@ -12,4 +11,18 @@ export const tareasReducer =
             default:
                 return state;
         }
-};
+}; */
+
+
+const reducer = createReducer<Array<Tarea>, Action>(
+    [],
+    on(AddTareaAcction,
+        (state: Array<Tarea>, {payload}) => [...state, payload])
+);
+
+// The exported reducer function is necessary
+// as function calls are not supported by the AOT compile
+
+export function tareasReducer(state: Array<Tarea> = [], action: Action) {
+    return reducer(state, action);
+}

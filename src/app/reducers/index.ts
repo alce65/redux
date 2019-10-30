@@ -13,7 +13,7 @@ import { tareasReducer } from './tareas.reducers';
 // cada uno de los elementos del estado
 // tendra su reducer (único) y sus actions
 
-export interface State {
+export interface AppState {
   counter: number;
   tareas: Array<Tarea>;
 }
